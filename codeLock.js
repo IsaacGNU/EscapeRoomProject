@@ -1,5 +1,5 @@
 const output = document.querySelector('.output');
-const message = maker('div', output, '', 'message');
+const message = maker('div', output, 'Press start to begin', 'message');
 const btn = maker('button', output, 'Start game', 'btn');
 btn.onclick = startGame;
 btn.style.display = 'block';
@@ -13,16 +13,17 @@ function startGame(){
     btn.style.display = 'none';
     game.tries = 0;
     gameArea.innerHTML = '';
+    message.textContent = 'Guess the code and press unlock'
     setUpGameBoard();
 }
 
 function setUpGameBoard(){
-    for(let x=0;x<game.combos;x++){
-        const digit = maker('input', gameArea, '', 'combo');
-        digit.setAttribute('type', 'number');
-        digit.max = 9;
-        digit.min = 0;
-        digit.value = 0;
+    for(let i=0;i<game.combos;i++){
+        const ele = maker('input', gameArea, '', 'combo');
+        ele.setAttribute('type', 'number');
+        ele.max = 9;
+        ele.min = 0;
+        ele.value = 0;
         const val = Math.floor(Math.random()*10);
         game.arr.push(val);
     }
@@ -66,7 +67,4 @@ function maker(eleTag, parent, html, cla){
     el.innerHTML = html;
     el.classList.add(cla);
     return parent.appendChild(el);
-
 }
-
-
