@@ -1,31 +1,30 @@
 const output = document.querySelector('.output');
-const message = maker('div', output, 'Press start to begin', 'message');
+const message = maker('div', output, '', 'message');
 const btn = maker('button', output, 'Start game', 'btn');
 btn.onclick = startGame;
 btn.style.display = 'block';
 const gameArea = maker('div', output, '', 'gameArea');
-const game = {
+const code = {
     combos : 4, arr:[]
 };
 
 function startGame(){
     console.log('Start');
     btn.style.display = 'none';
-    game.tries = 0;
+    code.tries = 0;
     gameArea.innerHTML = '';
-    message.textContent = 'Guess the code and press unlock'
     setUpGameBoard();
 }
 
 function setUpGameBoard(){
-    for(let i=0;i<game.combos;i++){
+    for(let i=0;i<code.combos;i++){
         const ele = maker('input', gameArea, '', 'combo');
         ele.setAttribute('type', 'number');
         ele.max = 9;
         ele.min = 0;
         ele.value = 0;
         const val = Math.floor(Math.random()*10);
-        game.arr.push(val);
+        code.arr.push(val);
     }
     const unlockButton = maker('button', gameArea, 'Unlock', 'btn');
     unlockButton.onclick = checkCombo;
@@ -34,14 +33,14 @@ function setUpGameBoard(){
 function checkCombo(){
     const ins = document.querySelectorAll('.combo');
     let counter = 0;
-    game.tries++;
+    code.tries++;
     ins.forEach((el, ind)=>{
         el.style.color = 'white';
-        if(el.value==game.arr[ind]){
+        if(el.value==code.arr[ind]){
             el.style.backgroundColor = 'green';
             counter++;
         }else{
-            if(el.value > game.arr[ind]){
+            if(el.value > code.arr[ind]){
                 el.style.backgroundColor = 'red';
             }else{
                 el.style.backgroundColor = 'blue';
@@ -49,7 +48,7 @@ function checkCombo(){
         };
     })
     if(counter >= ins.length){
-        message.textContent = `You guessed the code in ${game.tries} tries!`;
+        message.textContent = `You guessed the code in ${code.tries} tries!`;
         gameWin();
     }else{
         message.textContent = 'Try again!';
