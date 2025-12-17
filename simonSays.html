@@ -1,6 +1,5 @@
 <DOCTYPE html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=windows-1252">
 <style>
 		body {
 			display: flex;
@@ -107,10 +106,10 @@
 		</span>
 	</div>
 	<button id="power-btn"
-			onclick="togglePower()">Start</button>
+			onclick="toggleGame()">Start</button>
 
 	<script>
-		let powerOn = false;
+		let gameOn = false;
 		const sequence = [];
 		let userSequence = [];
 		let level = 1;
@@ -150,7 +149,7 @@
 		}
 
 		function handleClick(button) {
-			if (powerOn) {
+			if (gameOn) {
 				const userColour = button.getAttribute("data-colour");
 				userSequence.push(Number(userColour));
 				highlightButton(userColour);
@@ -218,9 +217,9 @@
 			button.setAttribute('disabled', 'true'));
 		}
 
-		function togglePower() {
-			powerOn = !powerOn;
-			if (powerOn) {
+		function toggleGame() {
+			gameOn = !gameOn;
+			if (gameOn) {
 				startGame();
 				enableButtons();
 				document.getElementById("start-btn")
@@ -235,5 +234,4 @@
 	</script>
 	<h1>Follow the order of the coloured buttons</h1>
 </body>
-
 </html>

@@ -66,7 +66,4 @@ function maker(eleTag, parent, html, cla){
     el.innerHTML = html;
     el.classList.add(cla);
     return parent.appendChild(el);
-
 }
-
-

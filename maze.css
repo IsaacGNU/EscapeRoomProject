@@ -21,8 +21,6 @@ p {
 	width: 30px;
 	border: 1px solid black;
 	padding: 5px;
-	
-	font-family: "Helvetica", "Arial", sans-serif;
 	font-size: 25pt;
 	text-align: center;
 }
@@ -54,7 +52,6 @@ div.youlose {
 
 #maze div.boundary {
 	position: absolute;
-	
 	top: 0;
 	left: 0;
 	height: 200px;
@@ -66,7 +63,6 @@ div.youlose {
 	border-left: none;
 	border-right: none;
 	z-index: 2;
-	
 	left: 151px;
 	height: 50px;
 	width: 198px;
@@ -76,7 +72,6 @@ div.youlose {
 	border-left: 1px black solid;
 	border-right: 1px black solid;
 	z-index: 1;
-	
 	left: 348px;
 	height: 200px;
 	width: 150px;
@@ -84,7 +79,6 @@ div.youlose {
 
 #maze div.boundary + div.boundary + div.boundary + div.boundary {
 	border: 1px black solid;
-	
 	top: 250px;
 	left: 0;
 	height: 48px;
@@ -93,7 +87,6 @@ div.youlose {
 
 #maze div.boundary + div.boundary + div.boundary + div.boundary + div.boundary {
 	border-bottom: none;
-	
 	top: 100px;
 	left: 200px;
 	height: 150px;
