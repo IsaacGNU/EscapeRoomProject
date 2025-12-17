@@ -23,8 +23,8 @@ function setUpGameBoard(){
         digit.max = 9;
         digit.min = 0;
         digit.value = 0;
-        const val = Math.floor(Math.random()*10);
-        code.arr.push(val);
+        const value = Math.floor(Math.random()*10);
+        code.arr.push(value);
     }
     const unlockButton = maker('button', gameArea, 'Unlock', 'btn');
     unlockButton.onclick = checkCombo;
@@ -68,4 +68,5 @@ function maker(eleTag, parent, html, cla){
     return parent.appendChild(el);
 
 }
+
 
