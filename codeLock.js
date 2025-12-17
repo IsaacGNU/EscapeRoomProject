@@ -26,8 +26,8 @@ function setUpGameBoard(){
         const val = Math.floor(Math.random()*10);
         game.arr.push(val);
     }
-    const btn1 = maker('button', gameArea, 'Unlock', 'btn');
-    btn1.onclick = checkCombo;
+    const unlockButton = maker('button', gameArea, 'Unlock', 'btn');
+    unlockButton.onclick = checkCombo;
 }
 
 function checkCombo(){
@@ -66,4 +66,5 @@ function maker(eleTag, parent, html, cla){
     el.innerHTML = html;
     el.classList.add(cla);
     return parent.appendChild(el);
+
 }
