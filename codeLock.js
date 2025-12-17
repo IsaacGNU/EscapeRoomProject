@@ -18,7 +18,7 @@ function startGame(){
 }
 
 function setUpGameBoard(){
-    for(let i=0;i<game.combos;i++){
+    for(let x=0;x<game.combos;x++){
         const ele = maker('input', gameArea, '', 'combo');
         ele.setAttribute('type', 'number');
         ele.max = 9;
@@ -67,4 +67,5 @@ function maker(eleTag, parent, html, cla){
     el.innerHTML = html;
     el.classList.add(cla);
     return parent.appendChild(el);
+
 }
