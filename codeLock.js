@@ -18,11 +18,11 @@ function startGame(){
 
 function setUpGameBoard(){
     for(let x=0;x<game.combos;x++){
-        const ele = maker('input', gameArea, '', 'combo');
-        ele.setAttribute('type', 'number');
-        ele.max = 9;
-        ele.min = 0;
-        ele.value = 0;
+        const digit = maker('input', gameArea, '', 'combo');
+        digit.setAttribute('type', 'number');
+        digit.max = 9;
+        digit.min = 0;
+        digit.value = 0;
         const val = Math.floor(Math.random()*10);
         game.arr.push(val);
     }
@@ -68,4 +68,5 @@ function maker(eleTag, parent, html, cla){
     return parent.appendChild(el);
 
 }
+
 
