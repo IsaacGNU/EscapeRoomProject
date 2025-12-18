@@ -1,7 +1,7 @@
-var alerted =false;
-var startClick=false;
+var trigger = false;
+var startClick = false;
 var startTime;
-var mouseCurser=false;
+var mouseCurser = false;
 
 function start(){
 	mouseCurser=true;
@@ -13,8 +13,8 @@ var i;
 for(i=0;i<x.length;i++){
 	x[i].style.backgroundColor="#eeeeee";
 }
-    if(alerted==true) {
-		window.alerted=false;
+    if(trigger==true) {
+		window.trigger=false;
 }
 }
 
@@ -42,9 +42,9 @@ for(y=0;y<x.length;y++){
 	x[y].style.backgroundColor="red";
 }
 
-    if (!window.alerted) {
+    if (!window.trigger) {
 window.alert("You went over the border");
-	window.alerted=true;}
+	window.trigger=true;}
 }
 
 
