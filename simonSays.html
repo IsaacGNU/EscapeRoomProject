@@ -135,7 +135,7 @@
 				x++;
 				if (x >= sequence.length) {
 					clearInterval(intervalId);
-					enableButtons();
+					const buttons = document.querySelectorAll('.simon-btn');buttons.forEach(button => button.removeAttribute('disabled'));
 				}
 			}, 1000);
 		}
@@ -146,10 +146,9 @@
 				userSequence.push(Number(userColour));
 				highlightButton(userColour);
 				if (!checkSequence()) {
-					alert(`Wrong sequence! Try again from current level.\nSCORE: ${level}`);
+					alert(`Wrong sequence! Try again from current level.\nLEVEL: ${level}`);
 					userSequence = [];
-					document.getElementById('power-btn')
-					.addEventListener('click', () => {
+					document.getElementById('power-btn').addEventListener('click', () => {
 						playSequence();
 					})
 				} else if (userSequence.length === sequence.length) {
@@ -195,32 +194,16 @@
 			}, 300);
 		}
 
-		function enableButtons() {
-			const buttons = document
-			.querySelectorAll('.simon-btn');
-			buttons.forEach(button => 
-			button.removeAttribute('disabled'));
-		}
-
-		function disableButtons() {
-			const buttons = document
-			.querySelectorAll('.simon-btn');
-			buttons.forEach(button => 
-			button.setAttribute('disabled', 'true'));
-		}
-
 		function toggleGame() {
 			gameOn = !gameOn;
 			if (gameOn) {
 				startGame();
-				enableButtons();
-				document.getElementById("start-btn")
-				.disabled = false;
+				const buttons = document.querySelectorAll('.simon-btn');buttons.forEach(button => button.removeAttribute('disabled'));
+				document.getElementById("start-btn").disabled = false;
 			} else {
 				userSequence = [];
-				disableButtons();
-				document.getElementById("start-btn")
-				.disabled = true;
+				const buttons = document.querySelectorAll('.simon-btn');buttons.forEach(button => button.setAttribute('disabled', 'true'));
+				document.getElementById("start-btn").disabled = true;
 			}
 		}
 	</script>
