@@ -62,8 +62,8 @@ function gameWin(){
 }
 
 function maker(eleTag, parent, html, cla){
-    const el = document.createElement(eleTag);
-    el.innerHTML = html;
-    el.classList.add(cla);
-    return parent.appendChild(el);
+    const elementTag = document.createElement(eleTag);
+    elementTag.innerHTML = html;
+    elementTag.classList.add(cla);
+    return parent.appendChild(elementTag);
 }
