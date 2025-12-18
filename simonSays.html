@@ -127,16 +127,8 @@
 		}
 
 		function nextRound() {
-			addToSequence();
-			playSequence();
-		}
-
-		function addToSequence() {
 			const randomColor = Math.floor(Math.random() * 4) + 1;
 			sequence.push(randomColor);
-		}
-
-		function playSequence() {
 			let x = 0;
 			const intervalId = setInterval(() => {
 				highlightButton(sequence[x]);
